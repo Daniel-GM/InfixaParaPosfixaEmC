@@ -43,14 +43,14 @@ int main(){
 					break;
 				case '+':
 				case '-':
-					if(operadores[contOperadores] == '^'){
+					if(operadores[contOperadores] == '^' || operadores[contOperadores] == '*'){
 						for(int x=0; x == 0; contOperadores--,contPosfixa++){
 							posfixa[contPosfixa+1] = operadores[contOperadores];
-							if(operadores[contOperadores] == '+' || operadores[contOperadores] == '-')
+							if(operadores[contOperadores] == '+' || operadores[contOperadores] == '-' || operadores[contOperadores] == '(' || contOperadores-1 == -1)
 								x++;
 						}	
 					}
-					if(contOperadores != -1 && operadores[contOperadores] != '('){
+					if(contOperadores != -1 && operadores[contOperadores] != '(' /*&& operadores[contOperadores] == '^' || operadores[contOperadores] == '*'*/){
 						contPosfixa++;
 						posfixa[contPosfixa] = operadores[contOperadores];
 						operadores[contOperadores] = infixa[cont];
